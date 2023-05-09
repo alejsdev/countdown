@@ -15,6 +15,7 @@ body {
   align-items: center;
   background-color: #3c93ad;
   font-family: "Gafata", sans-serif;
+  overflow-y: hidden;
 }
 
 .container {
@@ -248,5 +249,11 @@ svg {
     transform: translateX(-1000px);
     transform: translateX(-1000px);
     transform: translateX(-1000px);
+  }
+}
+
+@media (max-width: 480px) {
+  .plane {
+    height: 20px;
   }
 }
