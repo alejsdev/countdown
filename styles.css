@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background-color: #3c93ad;
+  font-family: "Gafata", sans-serif;
+}
+
+.container {
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+/* Plane Animations */
+
+* {
+  position: relative;
+}
+
+.frame {
+  width: 500px;
+  height: 80%;
+  margin: 15% auto 0;
+  position: absolute;
+  width: 100%;
+}
+
+svg {
+  max-width: 100%;
+  height: 30%;
+  display: block;
+}
+
+/*Paper Plane: Container*/
+
+.plane-container {
+  width: 200px;
+  margin: 0px auto;
+  z-index: -1;
+}
+
+/*Paper Plane: Image*/
+
+.plane {
+  width: 100%;
+  height: 50px;
+}
+
+/*Paper Plane: Animation*/
+
+.plane-container {
+  animation: paper-plane-scoping 2s alternate infinite;
+  animation: paper-plane-scoping 2s alternate infinite;
+  animation: paper-plane-scoping 2s alternate infinite;
+
+  animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@keyframes paper-plane-scoping {
+  0% {
+    transform: translateY(0px);
+    transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100px);
+    transform: translateY(100px);
+    transform: translateY(100px);
+  }
+}
+
+.plane {
+  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+
+  animation: paper-plane-soaring 4s forwards infinite;
+  animation: paper-plane-soaring 4s forwards infinite;
+  animation: paper-plane-soaring 4s forwards infinite;
+}
+
+@keyframes paper-plane-soaring {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+    transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+/**
+ * Clouds
+ */
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.cloud {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  right: 0;
+  opacity: 1;
+}
+
+.cloud.front {
+  z-index: 9;
+}
+
+.cloud.distant {
+  z-index: 1;
+}
+
+.cloud.background {
+  z-index: 1;
+}
+
+/*Cloud Sizing*/
+.cloud.smaller {
+  margin-right: 400px;
+  width: 100px;
+  margin-top: 50px;
+}
+
+.cloud.small {
+  margin-right: 200px;
+  width: 150px;
+}
+
+.cloud.big {
+  width: 500px;
+  margin-top: 50px;
+  margin-right: 150px;
+}
+
+.cloud.massive {
+  width: 600px;
+  margin-top: 20px;
+  margin-right: 0px;
+}
+
+/*Cloud: Animation*/
+.cloud {
+  animation-name: cloud-movement;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+
+  animation-name: cloud-movement;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+
+  animation-name: cloud-movement;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+
+.slow {
+  animation-duration: 9.2s;
+  animation-duration: 9.2s;
+  animation-duration: 9.2s;
+}
+
+.slower {
+  animation-duration: 11.2s;
+  animation-duration: 11.2s;
+  animation-duration: 11.2s;
+}
+
+.slowest {
+  animation-duration: 13.5s;
+  animation-duration: 13.5s;
+  animation-duration: 13.5s;
+}
+
+.super-slow {
+  animation-duration: 20.5s;
+  animation-duration: 20.5s;
+  animation-duration: 20.5s;
+}
+
+@keyframes cloud-movement {
+  0% {
+    opacity: 0.1;
+    transform: translateX(300px);
+    transform: translateX(300px);
+    transform: translateX(300px);
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    transform: translateX(-1000px);
+  }
+}
