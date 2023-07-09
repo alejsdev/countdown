@@ -3,11 +3,10 @@ const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 
-const finalDate = new Date("July 10, 2023 12:00:00").getTime();
+const finalDate = new Date("July 10, 2023 16:00:00").getTime();
 
 const countdownInterval = setInterval(() => {
   const currentDate = new Date().getTime();
-
   const remainingTime = finalDate - currentDate;
 
   const totalSeconds = Math.floor(remainingTime / 1000);
@@ -27,6 +26,7 @@ const countdownInterval = setInterval(() => {
     minutes.innerHTML = 0;
     seconds.innerHTML = 0;
     clearInterval(countdownInterval);
+
     const defaults = {
       spread: 300,
       ticks: 200,
@@ -37,25 +37,25 @@ const countdownInterval = setInterval(() => {
       colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
     };
 
-    confetti({
-      ...defaults,
-      particleCount: 50,
-      scalar: 2,
-    });
+    function shootConfetti() {
+      confetti({
+        ...defaults,
+        particleCount: 50,
+        scalar: 2,
+      });
 
-    confetti({
-      ...defaults,
-      particleCount: 25,
-      scalar: 3,
-    });
+      confetti({
+        ...defaults,
+        particleCount: 25,
+        scalar: 3,
+      });
 
-    confetti({
-      ...defaults,
-      particleCount: 10,
-      scalar: 4,
-    });
+      confetti({
+        ...defaults,
+        particleCount: 10,
+        scalar: 4,
+      });
 
-    function shoot() {
       confetti({
         ...defaults,
         particleCount: 40,
@@ -71,8 +71,11 @@ const countdownInterval = setInterval(() => {
       });
     }
 
-    setTimeout(shoot, 0);
-    setTimeout(shoot, 100);
-    setTimeout(shoot, 200);
+    function startConfetti() {
+      shootConfetti();
+      setTimeout(startConfetti, 3000); // Espera 200 milisegundos antes de generar más confeti
+    }
+
+    startConfetti();
   }
 });
