@@ -73,7 +73,7 @@ const countdownInterval = setInterval(() => {
 
     function startConfetti() {
       shootConfetti();
-      setTimeout(startConfetti, 3000); // Espera 200 milisegundos antes de generar más confeti
+      setTimeout(startConfetti, 3000); 
     }
 
     startConfetti();
