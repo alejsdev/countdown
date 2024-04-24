@@ -3,7 +3,7 @@ const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 
-const finalDate = new Date("May 24, 2024 12:00:00").getTime();
+const finalDate = new Date("May 24, 2024 10:00:00 GMT-0500").getTime();
 
 const countdownInterval = setInterval(() => {
   const currentDate = new Date().getTime();
